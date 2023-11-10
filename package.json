@@ -8,7 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "grid-layout-wc": "0.0.5",
+    "grid-layout-wc": "^0.0.6",
     "highcharts": "^11.2.0",
     "highcharts-3d": "^0.1.7",
     "highcharts-vue": "^1.4.3",
