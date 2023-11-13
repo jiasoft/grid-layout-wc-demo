@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from "vue";
 import 'grid-layout-wc/grid-layout-wc.js';
 import highcharts01 from "./highcharts01.vue";
 import highcharts02 from "./highcharts02.vue";
@@ -12,13 +13,25 @@ const layoutList = [
 {x: 71, y: 42, w: 56, h: 35,"slot":"4","id":4},
 {x: 1, y: 55, w: 37, h: 34,"slot":"5","id":5,float: true}
 ]
-
+const isEdit = ref(false);
+const onEdit = (e) => {
+  console.log(e)
+  isEdit.value = true;
+}
+const onClose = (e) => {
+  console.log(e);
+  isEdit.value = false;
+}
+const onSave = (e) => {
+  console.log(e);
+}
 </script>
 
 <template>
 
   <main>
-    <grid-layout-wc :layoutData="layoutList" :edit="true">
+    <button @click="onEdit">edit</button>
+    <grid-layout-wc :layoutData="layoutList" :edit="isEdit" @close="onClose" @save="onSave">
       <div slot="1">
         <highcharts01 />
       </div>
@@ -43,5 +56,8 @@ main {
   width:1280px;
   margin:auto;
   height: 100vh;
+}
+grid-layout-wc{
+  height: calc(100% - 25px);
 }
 </style>
