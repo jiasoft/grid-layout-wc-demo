@@ -30,7 +30,7 @@ const onSave = (e) => {
 <template>
 
   <main>
-    <button @click="onEdit">edit</button>
+    <button class="edit" @click="onEdit">edit</button>
     <grid-layout-wc :layoutData="layoutList" :edit="isEdit" @close="onClose" @save="onSave">
       <div slot="1">
         <highcharts01 />
@@ -57,7 +57,10 @@ main {
   margin:auto;
   height: 100vh;
 }
+.edit{
+  margin:11px 0px 0px 11px;
+}
 grid-layout-wc{
-  height: calc(100% - 25px);
+  height: calc(100% - 32px);
 }
 </style>
