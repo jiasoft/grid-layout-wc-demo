@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import 'grid-layout-wc/grid-layout-wc.js';
+import 'grid-layout-lit';
 import highcharts01 from "./highcharts01.vue";
 import highcharts02 from "./highcharts02.vue";
 import highcharts03 from "./highcharts03.vue";
@@ -31,7 +31,7 @@ const onSave = (e) => {
 
   <main>
     <button class="edit" @click="onEdit">edit</button>
-    <grid-layout-wc :layoutData="layoutList" :edit="isEdit" @close="onClose" @save="onSave">
+    <grid-layout-lit :layoutData="layoutList" :edit="isEdit" @close="onClose" @save="onSave">
       <div slot="1">
         <highcharts01 />
       </div>
@@ -47,7 +47,7 @@ const onSave = (e) => {
       <div slot="5">
         <highcharts05 />
       </div>
-    </grid-layout-wc>
+    </grid-layout-lit>
   </main>
 </template>
 
